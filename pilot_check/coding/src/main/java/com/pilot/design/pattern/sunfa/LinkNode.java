@@ -115,7 +115,7 @@ public class LinkNode {
      * @param i
      * @param j
      */
-    public static void quickSort(int array[], int i, int j) {
+    public static void quickSort(int []array, int i, int j) {
         if (i < j) {
 
             int mid = getMid(array, i, j);
@@ -124,7 +124,7 @@ public class LinkNode {
         }
     }
 
-    public static int getMid(int array[], int low, int heigh) {
+    public static int getMid(int []array, int low, int heigh) {
         int value = array[low];
         while (low < heigh) {
             while (low < heigh && array[heigh] > value) {

@@ -30,6 +30,9 @@ public class SubjectTopic implements Subject {
     public void notifyInfo(String s) {
         for (Observer observerUser : list) {
             observerUser.update(s);
+
+
+
         }
     }
 }

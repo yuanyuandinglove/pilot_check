@@ -9,14 +9,26 @@ package com.pilot.design.pattern.sunfa;
 public class BuildHeap {
 
     public static void main(String[] args) {
-        int array[] = {1, 4, 2, 3, 6, 8, 7, 5};
+        int []array = {1, 4, 2, 3, 6, 8, 7, 5};
+
+        int[] arr = {7,23,45,9,40,73,12,49};
 
         buildHeap(array);
 
+
+        sort(array,array.length);
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.print(array[i]+"-");
+        }
+        System.out.println("");
+        buildHeap( arr);
+        sort(arr,arr.length);
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+"-");
         }
     }
+
 
     /**
      * 构建大根堆
@@ -28,7 +40,7 @@ public class BuildHeap {
      * @return
      */
 
-    public static int[] buildHeap(int array[]) {
+    public static int[] buildHeap(int []array) {
         if (array == null || array.length <= 0) {
             return array;
         }
@@ -61,4 +73,18 @@ public class BuildHeap {
         array[k] = temp;
     }
 
+    /**
+     * 堆排序
+     * @param array
+     * @param length
+     */
+    public static void sort(int []array, int length){
+
+        for (int i = length -1 ; i > 0; i --){
+             int temp = array[i];
+             array[i] = array[0];
+             array[0] = temp;
+             adjust(array,0,i);
+        }
+    }
 }
